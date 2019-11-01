@@ -218,7 +218,7 @@ WSPAPI WSPConnect(
 	ODSA(__FUNCTION__);
 	WCHAR temp[1024];
 	sockaddr_in *ConnectAddress = (sockaddr_in*)name;
-	_stprintf_s(temp, L"Connect to  %s:%d\n", inet_ntoa(ConnectAddress->sin_addr), ntohs(ConnectAddress->sin_port));
+	_stprintf_s(temp, _T("Connect to  %s:%d\n"), inet_ntoa(ConnectAddress->sin_addr), ntohs(ConnectAddress->sin_port));
 	ODS(temp);
 
 	strcpy_s(NowIP,inet_ntoa(ConnectAddress->sin_addr));
