@@ -89,6 +89,9 @@
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
+    <PreBuildEvent>
+      <Command>F:\LSPProject\Debug\rename.bat</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -106,6 +109,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
     </Link>
+    <PreBuildEvent>
+      <Command>F:\LSPProject\Debug\rename.bat</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -123,6 +129,9 @@
       <TargetMachine>MachineX86</TargetMachine>
       <ModuleDefinitionFile>NetworkFilter.def</ModuleDefinitionFile>
     </Link>
+    <PreBuildEvent>
+      <Command>F:\LSPProject\Debug\rename.bat</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -140,6 +149,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <ModuleDefinitionFile>NetworkFilter.def</ModuleDefinitionFile>
     </Link>
+    <PreBuildEvent>
+      <Command>F:\LSPProject\Debug\rename.bat</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="debug.h" />

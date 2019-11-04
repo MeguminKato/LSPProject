@@ -32,7 +32,9 @@ typedef enum _LSPERROR
 
 LSPERROR InstallLSP();
 LSPERROR RemoveLSP();
-LSPERROR AddRule(const char* name, const char* value);
-LSPERROR DeleteRule(const char*name);
+LSPERROR SetInterceptedProcess();
+
+LSPERROR SetRule(const char * app_name , const char * value);
+
 
 #endif

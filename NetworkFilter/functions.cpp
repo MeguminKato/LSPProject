@@ -18,7 +18,7 @@ DWORD GetInformation()
 
 	lanjie = 0;
 
-	if (RegOpenKeyExA(HKEY_LOCAL_MACHINE,"SYSTEM\\CurrentControlSet\\Control\\LSPManager",0, KEY_ALL_ACCESS, &hKey)!= ERROR_SUCCESS)
+	if (RegOpenKeyExA(HKEY_CURRENT_USER,"Software\\NetworkFilter",0, KEY_ALL_ACCESS, &hKey)!= ERROR_SUCCESS)
 	{
 		return 0;
 	}

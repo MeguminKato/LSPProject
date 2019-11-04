@@ -47,9 +47,9 @@ LSPERROR AddRule(const char* name, const char* value)
 		return LSP_TOO_LONG;
 	}
 
-	if (RegOpenKeyExA(HKEY_LOCAL_MACHINE,"SYSTEM\\CurrentControlSet\\Control\\LSPManager",0, KEY_ALL_ACCESS, &hKey)!= ERROR_SUCCESS)
+	if (RegOpenKeyExA(HKEY_CURRENT_USER,"Software\\NetworkFilter",0, KEY_ALL_ACCESS, &hKey)!= ERROR_SUCCESS)
 	{
-		if (RegCreateKeyExA(HKEY_LOCAL_MACHINE, "SYSTEM\\CurrentControlSet\\Control\\LSPManager", 0, NULL, 0, KEY_ALL_ACCESS, NULL,&hKey, &disp))
+		if (RegCreateKeyExA(HKEY_CURRENT_USER, "Software\\NetworkFilter", 0, NULL, 0, KEY_ALL_ACCESS, NULL,&hKey, &disp))
 			return LSP_ACCESS_DENIED;
 		Count = 0;
 	}
@@ -88,7 +88,7 @@ LSPERROR DeleteRule(const char* name)
 	if (strlen(name) > REG_MAX_LENGTH)
 		return LSP_TOO_LONG;
 
-	if (RegOpenKeyExA(HKEY_LOCAL_MACHINE,"SYSTEM\\CurrentControlSet\\Control\\LSPManager",0, KEY_ALL_ACCESS, &hKey)!= ERROR_SUCCESS)
+	if (RegOpenKeyExA(HKEY_CURRENT_USER,"Software\\NetworkFilter",0, KEY_ALL_ACCESS, &hKey)!= ERROR_SUCCESS)
 		return LSP_ACCESS_DENIED;
 
 	RegQueryValueExA(hKey, "NumberOfRules", 0, &keyType, (BYTE*)&Count, &len);
